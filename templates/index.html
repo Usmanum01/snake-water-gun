@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snake, Water, Gun</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><span class="s">Snake</span>, <span class="w">Water</span>, <span class="g">Gun</span></h1>
+    <p class="tagline">Snake drinks the water. Water rusts the gun. The gun kills the snake.</p>
+  </header>
+
+  <div class="score">
+    <div class="you"><span class="num" id="scoreYou">0</span><span class="label">You</span></div>
+    <div class="ties"><span class="num" id="scoreTies">0</span><span class="label">Draws</span></div>
+    <div class="cpu"><span class="num" id="scoreCpu">0</span><span class="label">Computer</span></div>
+  </div>
+
+  <div class="arena">
+    <div class="faceoff" id="faceoff">
+      <div class="icon" id="iconYou">?</div>
+      <span class="vs">vs</span>
+      <div class="icon" id="iconCpu">?</div>
+    </div>
+    <div class="result-text" id="resultText"></div>
+    <div class="hint" id="hint">Pick one below to play</div>
+  </div>
+
+  <div class="choices">
+    <button class="choice" data-k="s">Snake</button>
+    <button class="choice" data-k="w">Water</button>
+    <button class="choice" data-k="g">Gun</button>
+  </div>
+
+  <div class="reset-row">
+    <button id="resetBtn">Reset score</button>
+  </div>
+
+  <div class="rules">
+    Every click sends your choice to the Python backend (<code>app.py</code>),
+    which runs the game logic and sends back the result.
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
